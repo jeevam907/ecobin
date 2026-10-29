@@ -1,0 +1,112 @@
+/**
+ * EcoBin Multilingual Localization (i18n) Service
+ * Real translations for English, Hindi, Kannada, and Tamil
+ */
+
+export const TRANSLATIONS = {
+  en: {
+    tagline: 'Spot the Waste. Report in Seconds. Track Until Clean.',
+    reportWaste: 'Report Waste Now',
+    liveMap: 'Live Bin Map',
+    trackComplaint: 'Track Complaint',
+    home: 'Home',
+    binsMap: 'Bins Map',
+    tracking: 'Tracking',
+    profile: 'Profile',
+    citizenHub: 'Citizen Sanitation Hub',
+    ecoRewards: 'Eco Rewards Tier',
+    totalReports: 'Total Reports',
+    inProgress: 'In Progress',
+    resolved: 'Resolved',
+    wardRank: 'Ward Cleanliness',
+    nearestBins: 'Nearest Smart Bins',
+    fileComplaint: 'File a Waste Complaint',
+    submitReport: 'Submit Verified Report',
+    evidencePhotos: 'Evidence Photos',
+    selectCategory: 'Select Waste Category',
+    severityTarget: 'Severity & SLA Target',
+    detectedLocation: 'Detected Geotag Location',
+    description: 'Description & Remarks',
+    signOut: 'Sign Out'
+  },
+  hi: {
+    tagline: 'कचरा पहचानें। सेकंडों में रिपोर्ट करें। सफाई तक ट्रैक करें।',
+    reportWaste: 'अभी कचरा रिपोर्ट करें',
+    liveMap: 'लाइव बिन मैप',
+    trackComplaint: 'शिकायत ट्रैक करें',
+    home: 'होम',
+    binsMap: 'कूड़ेदान मैप',
+    tracking: 'ट्रैकिंग',
+    profile: 'प्रोफ़ाइल',
+    citizenHub: 'नागरिक स्वच्छता केंद्र',
+    ecoRewards: 'इको रिवार्ड्स स्तर',
+    totalReports: 'कुल रिपोर्ट',
+    inProgress: 'प्रगति पर है',
+    resolved: 'समाधान हुआ',
+    wardRank: 'वार्ड स्वच्छता',
+    nearestBins: 'निकटतम स्मार्ट बिन',
+    fileComplaint: 'कचरा शिकायत दर्ज करें',
+    submitReport: 'सत्यापित रिपोर्ट जमा करें',
+    evidencePhotos: 'साक्ष्य तस्वीरें',
+    selectCategory: 'कचरा श्रेणी चुनें',
+    severityTarget: 'गंभीरता और समय सीमा',
+    detectedLocation: 'स्थान (जीपीएस)',
+    description: 'विवरण व टिप्पणी',
+    signOut: 'लॉग आउट'
+  },
+  kn: {
+    tagline: 'ಕಸವನ್ನು ಗುರುತಿಸಿ. ಕ್ಷಣಾರ್ಧದಲ್ಲಿ ವರದಿ ಮಾಡಿ. ಸ್ವಚ್ಛವಾಗುವವರೆಗೆ ಟ್ರ್ಯಾಕ್ ಮಾಡಿ.',
+    reportWaste: 'ಈಗಲೇ ಕಸದ ವರದಿ ನೀಡಿ',
+    liveMap: 'ಲೈವ್ ಬಿನ್ ನಕ್ಷೆ',
+    trackComplaint: 'ದೂರು ಟ್ರ್ಯಾಕ್ ಮಾಡಿ',
+    home: 'ಮುಖಪುಟ',
+    binsMap: 'ಬಿನ್ ನಕ್ಷೆ',
+    tracking: 'ಟ್ರ್ಯಾಕಿಂಗ್',
+    profile: 'ಪ್ರೊಫೈಲ್',
+    citizenHub: 'ನಾಗರಿಕ ನೈರ್ಮಲ್ಯ ಕೇಂದ್ರ',
+    ecoRewards: 'ಇಕೋ ಬಹುಮಾನ ಹಂತ',
+    totalReports: 'ಒಟ್ಟು ವರದಿಗಳು',
+    inProgress: 'ಪ್ರಗತಿಯಲ್ಲಿದೆ',
+    resolved: 'ಪರಿಹರಿಸಲಾಗಿದೆ',
+    wardRank: 'ವಾರ್ಡ್ ಸ್ವಚ್ಛತೆ',
+    nearestBins: 'ಹತ್ತಿರದ ಸ್ಮಾರ್ಟ್ ಬಿನ್‌ಗಳು',
+    fileComplaint: 'ನೈರ್ಮಲ್ಯ ದೂರು ದಾಖಲಿಸಿ',
+    submitReport: 'ಪರಿಶೀಲಿಸಿದ ವರದಿ ಸಲ್ಲಿಸಿ',
+    evidencePhotos: 'ಫೋಟೋ ಸಾಕ್ಷ್ಯಗಳು',
+    selectCategory: 'ಕಸದ ವಿಭಾಗ ಆಯ್ಕೆಮಾಡಿ',
+    severityTarget: 'ತೀವ್ರತೆ ಮತ್ತು ಕಾಲಮಿತಿ',
+    detectedLocation: 'ಪತ್ತೆಯಾದ ಸ್ಥಳ (ಜಿಪಿಎಸ್)',
+    description: 'ವಿವರಣೆ ಮತ್ತು ಟಿಪ್ಪಣಿ',
+    signOut: 'ಲಾಗ್ ಔಟ್'
+  },
+  ta: {
+    tagline: 'குப்பையைக் கண்டறியுங்கள். நொடிகளில் புகாரளிக்கவும். சுத்தமாகும் வரை கண்காணிக்கவும்.',
+    reportWaste: 'குப்பையைப் புகாரளிக்கவும்',
+    liveMap: 'நேரடி குப்பைத்தொட்டி வரைபடம்',
+    trackComplaint: 'புகாரைக் கண்காணிக்கவும்',
+    home: 'முகப்பு',
+    binsMap: 'தொட்டி வரைபடம்',
+    tracking: 'கண்காணிப்பு',
+    profile: 'சுயவிவரம்',
+    citizenHub: 'குடிமக்கள் சுகாதார மையம்',
+    ecoRewards: 'சுற்றுச்சூழல் வெகுமதி நிலை',
+    totalReports: 'மொத்த புகார்கள்',
+    inProgress: 'செயல்பாட்டில் உள்ளது',
+    resolved: 'தீர்க்கப்பட்டது',
+    wardRank: 'வார்டு தூய்மை',
+    nearestBins: 'அருகிலுள்ள ஸ்மார்ட் தொட்டிகள்',
+    fileComplaint: 'புகார் பதிவு செய்யவும்',
+    submitReport: 'உறுதிசெய்த அறிக்கையைச் சமர்ப்பிக்கவும்',
+    evidencePhotos: 'புகைப்பட சான்றுகள்',
+    selectCategory: 'குப்பை வகையைத் தேர்ந்தெடுக்கவும்',
+    severityTarget: 'தீவிரம் & கால அளவு',
+    detectedLocation: 'கண்டறியப்பட்ட இருப்பிடம்',
+    description: 'விளக்கம் & குறிப்புகள்',
+    signOut: 'வெளியேறு'
+  }
+};
+
+export function t(key, lang = 'en') {
+  const dictionary = TRANSLATIONS[lang] || TRANSLATIONS.en;
+  return dictionary[key] || TRANSLATIONS.en[key] || key;
+}

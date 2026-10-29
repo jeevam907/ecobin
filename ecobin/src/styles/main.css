@@ -1,0 +1,289 @@
+/**
+ * EcoBin Main Stylesheet
+ * 3D Transformations, Perspective Layers, Glassmorphic Surfaces & Animations
+ */
+
+@import './tokens.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg-app);
+  background-image: 
+    radial-gradient(circle at 15% 15%, rgba(16, 185, 129, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 35%, rgba(20, 184, 166, 0.10) 0%, transparent 40%),
+    radial-gradient(circle at 50% 85%, rgba(132, 204, 22, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 90%, rgba(168, 85, 247, 0.06) 0%, transparent 35%);
+  background-attachment: fixed;
+  color: var(--text-primary);
+  font-family: var(--font-family-body);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* Perspective stage for 3D elements */
+.perspective-stage {
+  perspective: 1200px;
+  perspective-origin: center center;
+}
+
+/* 3D Depth Card */
+.depth-card {
+  position: relative;
+  background: var(--grad-card-surface);
+  border: 1px solid rgba(52, 211, 153, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-3d-md);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transform: translateZ(0);
+  transition: transform var(--transition-3d), box-shadow var(--transition-3d), border-color var(--transition-normal);
+  overflow: hidden;
+}
+
+.depth-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(110, 231, 183, 0.45), transparent);
+  pointer-events: none;
+}
+
+.depth-card:hover {
+  transform: translateY(-6px) rotateX(1.5deg);
+  box-shadow: var(--shadow-3d-card-hover);
+  border-color: rgba(52, 211, 153, 0.35);
+}
+
+/* Glass Surface with Ambient Edge */
+.glass-panel {
+  background: var(--bg-glass-subtle);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-3d-sm);
+}
+
+/* 3D Button Bases */
+.btn-3d {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: var(--font-family-display);
+  font-weight: 600;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.4rem;
+  border-radius: var(--radius-md);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  color: #ffffff;
+  position: relative;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast), filter var(--transition-fast);
+  user-select: none;
+  white-space: nowrap;
+}
+
+.btn-3d-primary {
+  background: var(--grad-eco-button);
+  box-shadow: var(--shadow-btn-3d);
+}
+
+.btn-3d-primary:hover {
+  background: var(--grad-eco-button-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #04523c, 0 12px 24px rgba(16, 185, 129, 0.5), 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.btn-3d-primary:active {
+  transform: translateY(3px);
+  box-shadow: var(--shadow-btn-3d-pressed);
+}
+
+.btn-3d-secondary {
+  background: linear-gradient(180deg, #14b8a6 0%, #0d9488 100%);
+  box-shadow: 0 4px 0 #0a6960, 0 8px 18px rgba(20, 184, 166, 0.35);
+}
+
+.btn-3d-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #0a6960, 0 12px 22px rgba(20, 184, 166, 0.45);
+}
+
+.btn-3d-outline {
+  background: rgba(16, 185, 129, 0.08);
+  border: 1.5px solid rgba(52, 211, 153, 0.4);
+  color: var(--color-emerald-300);
+  box-shadow: var(--shadow-3d-sm);
+}
+
+.btn-3d-outline:hover {
+  background: rgba(16, 185, 129, 0.16);
+  border-color: var(--color-emerald-400);
+  transform: translateY(-2px);
+  box-shadow: var(--glow-emerald);
+}
+
+/* Floating Action Button (FAB) for Mobile */
+.eco-fab {
+  position: fixed;
+  bottom: 5.5rem;
+  right: 1.5rem;
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 50%;
+  background: var(--grad-hero);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.55), 0 2px 0 rgba(255, 255, 255, 0.6) inset;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 90;
+  transition: transform var(--transition-3d), box-shadow var(--transition-3d);
+}
+
+.eco-fab:hover {
+  transform: scale(1.1) rotate(6deg);
+  box-shadow: 0 12px 30px rgba(16, 185, 129, 0.75), 0 0 25px rgba(132, 204, 22, 0.6);
+}
+
+/* Floating Animation Keyframes */
+@keyframes floatGentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.5;
+    filter: drop-shadow(0 0 10px rgba(16, 185, 129, 0.4));
+  }
+  50% {
+    opacity: 0.9;
+    filter: drop-shadow(0 0 24px rgba(16, 185, 129, 0.8));
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.floating-anim {
+  animation: floatGentle 5s ease-in-out infinite;
+}
+
+.floating-anim-delayed {
+  animation: floatGentle 6s ease-in-out 1.5s infinite;
+}
+
+.pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spinSlow 25s linear infinite;
+}
+
+/* 3D Status Pill Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  box-shadow: var(--shadow-3d-sm);
+}
+
+.status-pill.submitted {
+  background: rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.4);
+  color: #38bdf8;
+}
+
+.status-pill.assigned {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: rgba(245, 158, 11, 0.4);
+  color: #fbbf24;
+}
+
+.status-pill.in-progress {
+  background: rgba(139, 92, 246, 0.15);
+  border-color: rgba(139, 92, 246, 0.4);
+  color: #c084fc;
+}
+
+.status-pill.resolved {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: #34d399;
+}
+
+.status-pill.rejected {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.4);
+  color: #f87171;
+}
+
+/* Status Indicator Dot */
+.status-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* Header & Shell Grid */
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  padding-bottom: 5rem;
+}
+
+/* Responsive Breakpoints */
+@media (min-width: 768px) {
+  .app-container.with-sidebar {
+    flex-direction: row;
+  }
+  .main-content {
+    padding-bottom: 2rem;
+  }
+}

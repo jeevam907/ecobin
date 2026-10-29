@@ -1,0 +1,26 @@
+{
+  "name": "ecobin",
+  "version": "1.0.0",
+  "description": "EcoBin - Next-Generation 3D Smart Waste Management & Citizen Sanitation Platform",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "powershell -ExecutionPolicy Bypass -File ./serve.ps1"
+  },
+  "keywords": [
+    "smart-city",
+    "waste-management",
+    "3d",
+    "pwa",
+    "iot-bins",
+    "leaflet",
+    "supabase"
+  ],
+  "author": "EcoBin Team",
+  "license": "MIT",
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
