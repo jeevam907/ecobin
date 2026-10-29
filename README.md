@@ -1,0 +1,2 @@
+# ecobin
+waste manegement system
